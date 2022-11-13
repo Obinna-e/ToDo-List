@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ListItems from "./ToDos";
 
 function App() {
-
-
   const [newItem, setNewItem] = useState("");
   const [toDos, setToDos] = useState([]);
 
@@ -11,17 +9,13 @@ function App() {
     setNewItem(event.target.value);
   }
 
-  function addTodo() { 
-    setToDos([...toDos, 
-      newItem]);
+  function addTodo() {
+    setToDos([...toDos, newItem]);
     setNewItem("");
   }
 
   function createTodoList(todo) {
-    return <ListItems 
-      key={todo.uniqueId}
-      todos={todo}
-    />
+    return <ListItems key={todo.uniqueId} todos={todo} />;
   }
   return (
     <div className="container">
@@ -29,16 +23,12 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input onChange={createNewItem} type="text" 
-          value={newItem}
-        />
+        <input onChange={createNewItem} type="text" value={newItem} />
         <button onClick={addTodo}>
           <span>Add</span>
         </button>
       </div>
-      <div>
-        {toDos.map(createTodoList)}
-      </div>
+      <div>{toDos.map(createTodoList)}</div>
     </div>
   );
 }
