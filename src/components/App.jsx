@@ -14,6 +14,7 @@ function App() {
   function addTodo() { 
     setToDos([...toDos, 
       newItem]);
+    setNewItem("");
   }
 
   function createTodoList(todo) {
