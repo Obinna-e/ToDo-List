@@ -1,9 +1,14 @@
 import React from "react";
 
-function ListItems() {
+
+
+function ListItems(props) {
+    
     return <div>
     <ul>
-    <li>A Item</li>
+    <li >{
+        props.todos
+    }</li>
   </ul>
   </div>
 }
