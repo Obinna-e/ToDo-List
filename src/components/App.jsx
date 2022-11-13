@@ -16,10 +16,6 @@ function App() {
       newItem]);
   }
 
-  function printTodo() {
-    console.log(toDos);
-  }
-
   function createTodoList(todo) {
     return <ListItems 
       key={todo.uniqueId}
@@ -29,7 +25,7 @@ function App() {
   return (
     <div className="container">
       <div className="heading">
-        <h1 onClick={printTodo}>To-Do List</h1>
+        <h1>To-Do List</h1>
       </div>
       <div className="form">
         <input onChange={createNewItem} type="text" 
